@@ -14,7 +14,7 @@ const board = new five.Board({port:"COM3"});
     let green = new five.Led(4);
     green.off();
 
-    let pedLight =  new five.Led(5);
+    let pedLight =  new five.Led(5);//This pin is for both the x2 ped lights and the pizo buzzer
     pedLight.on();
 
     //Begin the loop
@@ -23,24 +23,24 @@ const board = new five.Board({port:"COM3"});
       wait.for.time(2);
       pedLight.off();//Make sure ped light is off - its not safe to cross.
 
-      wait.for.time(5);
+      wait.for.time(5);//Get traffic ready to move
       amber.on();
   
-      wait.for.time(2);
+      wait.for.time(2);//Traffic is moving
       red.off();
       amber.off();
       green.on();
   
-      wait.for.time(10);
+      wait.for.time(10);//Start slowing traffic
       green.off();
       amber.on();
   
-      wait.for.time(3);
+      wait.for.time(3);//Traffic is stopped
       amber.off();
       red.on();
 
       wait.for.time(5);
-      pedLight.on();//Wait 5 seconds then allow ped to cross.
+      pedLight.on();//Wait 5 seconds for traffic then allow ped to cross.
       wait.for.time(10); //10 seconds to cross
     }
 
