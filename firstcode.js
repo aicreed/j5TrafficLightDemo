@@ -4,15 +4,15 @@ const board = new five.Board({port:"COM3"});
 
  board.on("ready", function() {
 
-//Prepare code
+//Init variables - during first cycle all lights plus buzzer is powered for a "self test"
     let red = new five.Led(2);
     red.on();
 
     let amber = new five.Led(3);
-    amber.off();
+    amber.on();
 
     let green = new five.Led(4);
-    green.off();
+    green.on();
 
     let pedLight =  new five.Led(5);//This pin is for both the x2 ped lights and the pizo buzzer
     pedLight.on();
