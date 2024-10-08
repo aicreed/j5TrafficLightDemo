@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "firmata": "^2.3.0",
+    "johnny-five": "^2.1.0",
+    "wait-for-stuff": "^1.4.0"
+  }
+}
